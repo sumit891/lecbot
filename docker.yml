@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  bot:
+    build: .
+    container_name: converter-bot
+    restart: unless-stopped
+    environment:
+      API_ID: "29899250"
+      API_HASH: "611d045796c79af3e5ddfa3d6fd536a7"
+      BOT_TOKEN: "8376613962:AAG6SwgLwQggSyfuGqN1rr6iL8Xaps1qQX8"
+      BOT_WORKDIR: "/app/tmp"
+    deploy:
+      replicas: 20   # 👈 यहां workers की संख्या बदल सकते हो (जितने चाहो)
